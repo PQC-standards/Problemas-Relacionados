@@ -1,0 +1,50 @@
+name: Test Notebooks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test_notebooks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r binder/requirements.txt  # Apunta al archivo requirements.txt dentro de binder
+
+      - name: Install Jupyter and nbconvert
+        run: |
+          pip install jupyter nbconvert
+
+      - name: Run Jupyter Notebooks
+        run: |
+          # Buscar archivos .ipynb en la raíz del repositorio
+          echo "Buscando archivos .ipynb en la raíz del repositorio..."
+          notebooks=$(find ./ -maxdepth 1 -type f -name "*.ipynb")
+
+          # Verificar si se encontraron notebooks
+          if [ -z "$notebooks" ]; then
+            echo "No se encontraron archivos .ipynb en la raíz del repositorio."
+            exit 1
+          fi
+
+          # Ejecutar los notebooks
+          for notebook in $notebooks; do
+            echo "Ejecutando notebook: \"$notebook\""
+            # Usar comillas alrededor de la ruta del archivo
+            jupyter nbconvert --to notebook --execute --inplace "$notebook" || { echo "Error ejecutando el notebook $notebook"; exit 1; }
+          done
