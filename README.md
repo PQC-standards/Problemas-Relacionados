@@ -9,6 +9,14 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/PQC-standards/Problemas-Relacionados/main)
 ![example workflow](https://github.com/PQC-standards/Problemas-Relacionados/actions/workflows/notebook-test.yml/badge.svg) <br>
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5426d46a29ee439a8a58929da4363fa8)](https://app.codacy.com/gh/PQC-standards/Problemas-Relacionados/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![Python](https://img.shields.io/badge/python-3.8-blue)
+![Versión](https://img.shields.io/badge/versión-1.0.5-blue)
+![Tamaño del repositorio](https://img.shields.io/github/repo-size/PQC-standards/Problemas-Relacionados)
+![Última actualización](https://img.shields.io/github/last-commit/PQC-standards/Problemas-Relacionados)
+
+
+
+
 
 En este repositorio se encuentran todos los notebooks que se hacen referencia en el proyecto. En los cuales se han desarrollado tanto herramientas para trabajar con las primitivas matemáticas como implementaciones de problemas más complejos. Todo explicado desde un punto de vista didáctico, con el objetivo de un acercamiento más cercano a la materia.
 
