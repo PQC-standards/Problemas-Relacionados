@@ -1,0 +1,39 @@
+name: Codacy Coverage
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  upload_coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r binder/requirements.txt
+          pip install pytest pytest-cov codacy-coverage
+
+      - name: Run tests and generate coverage
+        run: |
+          pytest --cov=. --cov-report=xml
+          # Esto generará un archivo coverage.xml con el reporte
+
+      - name: Upload coverage to Codacy
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        run: |
+          python-codacy-coverage -r coverage.xml
