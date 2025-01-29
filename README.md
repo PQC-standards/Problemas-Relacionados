@@ -69,7 +69,7 @@ Para ejecutar este proyecto, podemos lanzarlo desde Binder o, para una instalaci
 
 7. Clonar este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/ignaciowarleta/repo-TFG.git
+   git clone https://github.com/PQC-standards/Problemas-Relacionados.git
 
 ## Uso
 
