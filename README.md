@@ -58,6 +58,7 @@ Para ejecutar este proyecto, podemos lanzarlo desde Binder o, para una instalaci
    conda install matplotlib
    conda install numpy
    pip install lattpy
+   pip install scikit-learn
 
 5. Descargar jupyter notebook:
    ```bash
