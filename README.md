@@ -34,7 +34,7 @@ Este repositorio contiene los anexos sobre problemas relacionados realizados par
 
 El proyecto tiene como objetivo complementar el trabajo de documentación e investigación que se ha realizado sobre el nuevo estándar del NIST KYBER-KEM de una forma didáctica. De forma que se pueda entender completamente la primitiva matemática en la que se basa la mayoría de algoritmos de criptografía post-cuántica, los retículos. Así como los problemas en los que se sustentan estos algoritmos.
 
-**Se recomienda mirar antes los notebook **Reticulos** y **Anillos** del repositorio **Fundamentos-Teoricos**
+Se recomienda mirar antes los notebook **Reticulos** y **Anillos** del repositorio **Fundamentos-Teoricos**
 
 Los elementos principales del repositorio incluyen:
 
